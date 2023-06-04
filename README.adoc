@@ -1,0 +1,83 @@
+# Notes:
+
+## Introduction:
+
+In this document one can find notes which I have taken during my studies of the Go programming language.
+
+## Brief summary about the history of Go:
+
+* Fall 2007: Start of the work on the golang
+* November 2009: release
+* March 2012: first stable release of Go with version 1
+
+## Use-cases:
+
+Go allows programming on several layers of abstraction:
+
+* low-level:
+- embedding of C, assembler or system libraries
+* high-level:
+- grouping of components, which can be realized through design patterns
+
+## Packages in Go:
+
+There are two types of packages in Go:
+
+* program packages: implement runnable programs
+- files which belong to program packages always have to start with the line `package main`
+* library packages: provide services to other parts of programs
+- can be distributed into multiple files
+- have a simple export mechanism
+- can be nested
+- can have an intialization part
+* The opportunity to split a package into multiple files allowed the separation of specification and implementation.
+* The relationships between packages are organized using the expressions `import` and `export`.
+
+### Imports:
+
+Let `abc` be a package. All identifiers, which start with a `Capital letter` will be imported by using:
+
+```go
+import "abc"
+```
+
+If one wants to imports multiple packages, this can be achieved using brackets and comma
+separated values inside of them. Identifiers which a small letter can not be accessed from the outside.
+
+* The import statement has to be right in the beginning of the file after the `package ...` statement.
+* All imported identifiers will be called with their package name as prefix
+
+## Interfaces:
+
+The syntactical form of a specification is expressed as an interface in Go. The following snippet shows an example of an interface:
+
+```go
+package xyz
+
+import "abc"
+
+type Xyz interface {
+    Abc
+    X()
+    Y() uint
+    Z (b bool)
+}
+```
+
+By looking at this interface from the perspective of a Java developer, one has to get confused at some point:
+
+`Abc`, followed by two method signatures, followed by a single type, followed by an additional method signature,
+this has a specific meaning:
+
+`Abc` is an interface imported from the package `abc`. Additionally the methods `X()` and `Y()` are inherited from this interface.
+
+The method `Z(b bool)` is a new method, introduced by the interface `Xyz`.
+
+## Abstract data types:
+
+Go does not offer specifications of abstract data types. By looking at the previously introduced syntax and rules
+one can still formulate them by the construction of a data type, instead of a data object, from which only a singleton can be created.
+
+## Constructors:
+
+TODO: later
