@@ -88,3 +88,4 @@ TODO: later
 
 - https://github.com/golang-standards/project-layout[Go project layout]
 - https://link.springer.com/book/10.1007/978-3-658-35525-8["Objektbasierte Programmierung mit Go", Christian Maurer, 2021]
+- https://go.dev/ref/spec#Program_execution[Go reference]
