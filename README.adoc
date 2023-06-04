@@ -1,3 +1,5 @@
+:toc:
+
 # Notes:
 
 ## Introduction:
@@ -81,3 +83,8 @@ one can still formulate them by the construction of a data type, instead of a da
 ## Constructors:
 
 TODO: later
+
+## Literature and Sources:
+
+- https://github.com/golang-standards/project-layout[Go project layout]
+- https://link.springer.com/book/10.1007/978-3-658-35525-8["Objektbasierte Programmierung mit Go", Christian Maurer, 2021]
